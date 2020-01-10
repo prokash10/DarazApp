@@ -1,16 +1,29 @@
 package com.example.darazapp.model;
 
+import android.provider.Telephony;
+
 public class Users {
     private String FullName;
     private String Email;
     private String PhoneNo;
     private String Password;
+    private String SMS;
 
-    public Users(String fullName, String email, String phoneNo, String password) {
+    public String getSMS() {
+        return SMS;
+    }
+
+    public void setSMS(String SMS) {
+        this.SMS = SMS;
+    }
+
+    public Users(String fullName, String email, String phoneNo, String password, String sms) {
         FullName = fullName;
         Email = email;
         PhoneNo = phoneNo;
         Password = password;
+        SMS=sms;
+
     }
 
     public String getFullName() {

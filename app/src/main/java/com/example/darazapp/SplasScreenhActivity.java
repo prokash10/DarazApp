@@ -2,6 +2,7 @@ package com.example.darazapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 public class SplasScreenhActivity extends AppCompatActivity {
@@ -10,5 +11,21 @@ public class SplasScreenhActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splas_screenh);
+
+        Thread thread = new Thread() {
+            @Override
+            public void run() {
+                try {
+                    sleep(1000);
+                    Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
+                    startActivity(intent);
+                    finish();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        thread.start();
     }
 }
+
