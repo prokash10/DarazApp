@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Account.AccountFragment">
+
+    <include layout="@layout/account_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/btncreatebg">
+
+        <Button
+            android:id="@+id/btnSignInUp"
+            android:text="Login / Sign up"
+            android:textAllCaps="false"
+            android:textColor="#FF5722"
+            android:layout_marginTop="45dp"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bgoutline"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="200dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Orders"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:textColor="#FF5722"
+                android:text="View All >"
+                android:textSize="15dp"/>
+
+        </RelativeLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/my_order_bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:menu="@menu/menu_for_orders"
+            app:itemTextColor="#000000"
+            app:labelVisibilityMode="labeled"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Service"
+            android:layout_marginTop="5dp"
+            android:textSize="15dp" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/my_service_bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:menu="@menu/menu_for_services"
+            app:itemTextColor="#000000"
+            app:labelVisibilityMode="labeled"/>
+
+    </LinearLayout>
+
+</FrameLayout>
