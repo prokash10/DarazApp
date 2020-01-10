@@ -18,7 +18,7 @@ public interface UserAPI {
 
     @FormUrlEncoded
     @POST("user/login")
-    Call<SignUpResponse> checkUser(@Field("email") String email, @Field("password") String password);
+    Call<SignUpResponse> checkUser(@Field("Email") String Email, @Field("Password") String Password);
 }
 
 
