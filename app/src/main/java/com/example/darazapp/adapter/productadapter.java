@@ -11,17 +11,22 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.darazapp.R;
+import com.example.darazapp.Url.Url;
 import com.example.darazapp.model.Products;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class productadapter extends RecyclerView.Adapter<productadapter.ItemViewHolder> {
     List<Products> productsList;
+    Context context;
 
 
     public productadapter(Context context, List<Products> productsLis) {
         this.productsList = productsLis;
+        this.context = context;
     }
+
 
     @NonNull
     @Override
@@ -33,10 +38,11 @@ public class productadapter extends RecyclerView.Adapter<productadapter.ItemView
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
         final Products products=productsList.get(position);
-        holder.imgImage.setImageResource(products.getImage());
+        Picasso.get().load(Url.base_url_image+productsList.get(position).getImage()).into(holder.imgImage);
         holder.tvDescription.setText(products.getDescription());
         holder.tvRate.setText("Rs" + products.getPrice());
     }
+
 
     @Override
     public int getItemCount() {

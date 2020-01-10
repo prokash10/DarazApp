@@ -30,6 +30,7 @@ public class SignUpEmailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_email);
+
         FullName = findViewById(R.id.etFullName);
         Email = findViewById(R.id.etemail);
         Password = findViewById(R.id.etpassword);
@@ -38,11 +39,7 @@ public class SignUpEmailActivity extends AppCompatActivity {
 
         final Bundle bundle = getIntent().getExtras();
 
-        final String PhoneNo = bundle.getString("PhoneNo");
-        final String SMS = bundle.getString("SMS");
-        final String Name = FullName.getText().toString();
-        final String email = Email.getText().toString();
-        final String password = Password.getText().toString();
+
 
         chkb.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +68,13 @@ public class SignUpEmailActivity extends AppCompatActivity {
                     chkb.setError("Mandatory Field");
                     return;
                 }
+
+                String PhoneNo = bundle.getString("PhoneNo");
+                String SMS = bundle.getString("SMS");
+                String Name = FullName.getText().toString();
+                String email = Email.getText().toString();
+                String password = Password.getText().toString();
+
                 Users users = new Users(Name, email, password,PhoneNo, SMS);
 
                 UserAPI usersAPI = Url.getInstance().create(UserAPI.class);

@@ -9,13 +9,6 @@ public class Users {
     private String Password;
     private String SMS;
 
-    public String getSMS() {
-        return SMS;
-    }
-
-    public void setSMS(String SMS) {
-        this.SMS = SMS;
-    }
 
     public Users(String fullName, String email, String phoneNo, String password, String sms) {
         FullName = fullName;
@@ -57,5 +50,13 @@ public class Users {
     public void setPassword(String password) {
         Password = password;
     }
+    public String getSMS() {
+        return SMS;
+    }
+
+    public void setSMS(String SMS) {
+        this.SMS = SMS;
+    }
+
 }
 
