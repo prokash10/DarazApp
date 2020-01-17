@@ -50,11 +50,11 @@ public class LoginActivity extends AppCompatActivity {
         String email = Email.getText().toString();
         String password = Password.getText().toString();
 
-//        LoginBll loginBLL = new LoginBll();
+      LoginBll loginBLL = new LoginBll();
 
-//        StrictModeClass.StrictMode();
-//        if (loginBLL.checkUser(email, password)) {
-        if("abc"=="abc"){
+       StrictModeClass.StrictMode();
+        if (loginBLL.checkUser(email, password)) {
+
             Toast.makeText(this, "Login Succssful", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
             startActivity(intent);
